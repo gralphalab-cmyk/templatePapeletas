@@ -1,74 +1,118 @@
+/* Generales */
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  margin: 15px;
+}
 
+/* Tablas */
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+th, td {
+  border: 1px solid #999;
+  padding: 10px 10px;
+  text-align: center;
+}
+th {
+  background-color: #e6e6e6;
+  font-weight: bold;
+  font-size: 18px;
+}
+td {
+  font-size: 25px;
+  font-weight: bold;
+}
+.logo-cell {
+  border: none;
+  text-align: right;
+  vertical-align: middle;
+  padding-right: 100px;
+}
+.logo {
+  height: 100px;
+}
+
+/* Contenedor principal */
+.contenedor {
+  display: flex;
+  gap: 0px;
+  align-items: stretch;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Columna izquierda */
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  flex: 2;
+}
+
+/* Columna derecha QR */
+.qr-tabla {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.columna table,
+.qr-tabla table {
+  width: 100%;
+}
+.qr-tabla td {
+  vertical-align: middle;
+  font-size: 22px;
+}
+
+/* Cantidad grande */
+.cantidad-grande {
+  font-size: 62.5px;
+}
+
+/* Ajustes QR */
+.qr-tabla th {
+  padding: 5px 10px;
+}
+
+/* Tablas principales */
+.tabla-principal {
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 5px;
+}
+
+/* Bloque de información */
+.bloque {
+  margin-bottom: 5mm; /* medio centímetro */
+}
+
+/* Línea punteada */
+.linea-punteada {
+  border: none;
+  border-top: 2px dashed #000;
+  margin: 5mm 0; /* medio cm arriba y abajo */
+}
+
+/* --- Configuración impresión A4 horizontal --- */
+@page {
+  size: A4 landscape;
+  margin: 15mm;
+}
+
+@media print {
+  body {
+    margin: 0;
+    background: #fff;
+  }
   table {
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    margin: 0 auto 0 auto; /* centrado */
+    page-break-inside: avoid;
   }
-  th, td {
-    border: 1px solid #999;
-    padding: 10px 10px;
-    text-align: center;
-  }
-  th {
-    background-color: #e6e6e6; /* gris claro */
-    font-weight: bold;
-    font-size: 18px;
-  }
-  td {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  .logo-cell {
-    border: none;
-    text-align: right;
-    vertical-align: middle;
-    padding-right: 100px;
-  }
-  .logo {
-    height: 100px;
-  }
-
-  /* Contenedor en fila */
   .contenedor {
-    display: flex;
-    gap: 0px;
-    align-items: stretch;
-    width: 700px;      /* mismo ancho que las tablas */
-    margin: 0 auto;    /* centrado */
+    max-width: 100%;
   }
+}
 
-  /* Columna izquierda (tablas 3 y 4) */
-  .columna {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    flex: 2;
-  }
-
-  /* Columna derecha (tabla QR) */
-  .qr-tabla {
-    flex: 1;
-    display: flex;
-    flex-direction: column; /* para que abarque ambas filas */
-    gap: 0px;
-  }
-
-  .columna table,
-  .qr-tabla table {
-    width: 100%;
-  }
-
-  .qr-tabla td {
-    vertical-align: middle;
-    font-size: 22px;
-  }
-
-  /* Tamaño especial para el campo de cantidad grande */
-  .cantidad-grande {
-    font-size: 62.5px; /* 25px x 2.5 */
-  }
-
-  /* Ajuste específico para el título de la tabla QR */
-  .qr-tabla th {
-    padding: 5px 10px; /* reduce a la mitad el padding vertical */
-  }
